@@ -6,6 +6,9 @@ WORKDIR /app
 # Copy and install Python deps (PTB 21, supabase, dotenv, optional supervisor)
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
+RUN python -m playwright install-deps
+RUN python -m playwright install chromium
+
 
 # Copy your project files
 COPY . .
