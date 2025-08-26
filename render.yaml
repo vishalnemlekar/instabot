@@ -1,0 +1,18 @@
+services:
+  - type: worker
+    name: instabot-all-in-one
+    env: docker
+    autoDeploy: true
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: TELEGRAM_CHAT_ID
+        sync: false
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: SUPABASE_TABLE
+        value: instamart_products
+      - key: POLL_MINUTES
+        value: "10"
